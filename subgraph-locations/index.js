@@ -1,13 +1,15 @@
-const { ApolloServer, gql } = require('apollo-server');
-const { readFileSync } = require('fs');
+const { ApolloServer, gql } = require("apollo-server");
+const { readFileSync } = require("fs");
 
-const typeDefs = gql(readFileSync('./locations.graphql', { encoding: 'utf-8' }));
-const resolvers = require('./resolvers');
-const LocationsAPI = require('./datasources/LocationsApi');
+const typeDefs = gql(
+  readFileSync("./locations.graphql", { encoding: "utf-8" })
+);
+const resolvers = require("./resolvers");
+const LocationsAPI = require("./datasources/LocationsApi");
+const { buildSubgraphSchema } = require("@apollo/subgraph");
 
 const server = new ApolloServer({
-  typeDefs, 
-  resolvers,
+  schema: buildSubgraphSchema({ typeDefs, resolvers }),
   dataSources: () => {
     return {
       locationsAPI: new LocationsAPI(),
@@ -16,7 +18,7 @@ const server = new ApolloServer({
 });
 
 const port = 4001;
-const subgraphName = 'locations';
+const subgraphName = "locations";
 
 server
   .listen({ port })
