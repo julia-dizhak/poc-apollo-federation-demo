@@ -1,0 +1,36 @@
+extend schema
+  @link(url: "https://specs.apollo.dev/federation/v2.0", import: ["@key"])
+
+type Query {
+  "The full list of projects"
+  projects: [Project!]!
+  "The details of a specific project"
+  project(id: ID!): Project
+}
+
+type Project @key(fields: "id") {
+  id: ID!
+  "The name of the project"
+  name: String!
+  "A short description about the project"
+  description: String!
+  "The project's main photo as a URL"
+  photo: String!
+}
+
+type Mutation {
+  createProject(createProjectInput: CreateProjectInput!): Project!
+  updateProject(updateProjectInput: UpdateProjectInput!): Project!
+  removeProject(id: String!): String!
+}
+
+input CreateProjectInput {
+  ownerId: String!
+  name: String!
+}
+
+input UpdateProjectInput {
+  id: ID!
+  name: String!
+  ownerId: String!
+}

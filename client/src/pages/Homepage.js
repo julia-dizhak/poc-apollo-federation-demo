@@ -1,45 +1,24 @@
 import LocationCard from '../components/LocationCard';
-import ReviewCard from '../components/ReviewCard';
 import {Error} from './Error';
 
 import Spinner from '../components/Spinner';
-import {
-  Heading,
-  SimpleGrid,
-  Skeleton,
-  Stack,
-  Text,
-  VStack
-} from '@chakra-ui/react';
+import {Heading, SimpleGrid, Stack, Text, VStack} from '@chakra-ui/react';
 import {gql, useQuery} from '@apollo/client';
 
 export const GET_LATEST_REVIEWS_AND_LOCATIONS = gql`
-  query GetLatestReviewsAndLocations {
-    locations {
+  query GetProjects {
+    projects {
       id
       name
       description
-      overallRating
       photo
-      reviewsForLocation {
-        id
-        comment
-        rating
-      }
-    }
-    latestReviews {
-      id
-      comment
-      rating
-      location {
-        id
-        name
-      }
     }
   }
 `;
+
 export default function HomePage() {
   const {error, loading, data} = useQuery(GET_LATEST_REVIEWS_AND_LOCATIONS);
+
   if (error) return <Error error={error.message} />;
   return (
     <Stack direction="column" spacing="12">
@@ -50,7 +29,7 @@ export default function HomePage() {
           cosmonauts are saying.
         </Text>
       </VStack>
-      <Stack direction="column" spacing="4">
+      {/* <Stack direction="column" spacing="4">
         <Heading as="h2" size="lg">
           Latest Reviews
         </Heading>
@@ -68,17 +47,17 @@ export default function HomePage() {
                 <ReviewCard key={review.id} {...review} />
               ))}
         </SimpleGrid>
-      </Stack>
+      </Stack> */}
       <Stack direction="column" spacing="4">
         <Heading as="h2" size="lg">
-          Locations
+          Projects
         </Heading>
         {loading ? (
           <Spinner />
         ) : (
           <SimpleGrid columns={[1, null, 2]} spacing={4}>
-            {data?.locations.map(location => (
-              <LocationCard key={location.id} {...location} />
+            {data?.projects.map(project => (
+              <LocationCard key={project.id} {...project} />
             ))}
           </SimpleGrid>
         )}

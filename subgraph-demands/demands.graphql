@@ -1,0 +1,32 @@
+extend schema
+  @link(url: "https://specs.apollo.dev/federation/v2.0", import: ["@key"])
+
+type Query {
+  demands: [Demand!]!
+  demand(id: String!): Demand!
+}
+
+type Demand {
+  id: ID!
+  name: String!
+  volume: Int!
+}
+
+type Mutation {
+  createDemand(createDemandInput: CreateDemandInput!): Demand!
+  updateDemand(updateDemandInput: UpdateDemandInput!): Demand!
+  removeDemand(id: String!): String!
+}
+
+input CreateDemandInput {
+  name: String!
+  projectId: String!
+  volume: Int!
+}
+
+input UpdateDemandInput {
+  id: ID!
+  name: String!
+  volume: Int!
+  projectId: String!
+}

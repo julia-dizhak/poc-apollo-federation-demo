@@ -1,0 +1,40 @@
+{
+  "demands": [
+    {
+      "id": "demand-1",
+      "name": "item1",
+      "projectId": "project-1",
+      "volume": 1
+    },
+    {
+      "id": "demand-2",
+      "name": "item2",
+      "projectId": "project-1",
+      "volume": 2
+    },
+    {
+      "id": "demand-3",
+      "name": "item3",
+      "projectId": "project-1",
+      "volume": 2
+    },
+    {
+      "id": "demand-4",
+      "name": "item4",
+      "projectId": "project-2",
+      "volume": 1
+    },
+    {
+      "id": "demand-5",
+      "name": "item5",
+      "projectId": "project-2",
+      "volume": 2
+    },
+    {
+      "id": "demand-6",
+      "name": "item6",
+      "projectId": "project-2",
+      "volume": 2
+    }
+  ]
+}
