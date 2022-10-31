@@ -1,6 +1,6 @@
 # Apollo Federation Demo
 
-A learning example.
+A learning example 
 
 ## Presentation
 
@@ -53,14 +53,28 @@ To run the servers in the `subgraph-demands` folder:
 1. Open a new terminal window, and navigate to `subgraph-demands`.
 1. Run `npm install && npm start`. This will install all packages in the main server, then start the main server at `http://localhost:4002`.
 1. In a web browser, open Apollo Studio Sandbox for `http://localhost:4001`. You should be able to run queries against your gateway server. Some test queries are included in the following section.
+1. Check sub-graph demands
+```
+rover subgraph check --name demands --schema  ./subgraph-demands/demands.graphql ${APOLLO_GRAPH_REF}@current
+
+```
+1. Publish sub-graph demands
+```
+rover subgraph publish ${APOLLO_GRAPH_REF}@current \
+  --name demands \
+  --schema ./subgraph-demands/demands.graphql 
+```
+
 
 
 ### Gateway
 
 Run router
 
-```APOLLO_KEY=service:Archlet-test-Graph:${APOLLO_KEY} APOLLO_GRAPH_REF=${APOLLO_GRAPH_REF}@current ./router --config ./config.yaml
 ```
+APOLLO_KEY=service:Archlet-test-Graph:${APOLLO_KEY} APOLLO_GRAPH_REF=${APOLLO_GRAPH_REF}@current ./router --config ./config.yaml
+```
+
 
 ### Queries
 
