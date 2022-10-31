@@ -1,26 +1,24 @@
-# Voyage I: Federation from Day One
+# Apollo Federation Demo
 
-Welcome to FlyBy, the companion app of Odyssey Voyage I! You can find the [course lessons and instructions in Odyssey](https://apollographql.com/tutorials/voyage-part1/), Apollo's learning platform.
+A learning example.
 
-You can [preview the completed demo app here](https://odyssey-flyby.netlify.app/).
+## Presentation
 
-## How to use this repo
+url
 
-The course will walk you step by step through how to implement the features you see in the demo app. This codebase is the starting point of your journey!
 
 ### Backend
 
 You will work in three main folders:
 
-- `gateway`
-- `subgraph-locations`
-- `subgraph-reviews`
+- `router (gateway)`
+- `subgraph-projects`
+- `subgraph-demands`
 
-The course will help you set up and run each of these servers.
 
 ### Frontend
 
-The repo also includes a `client` folder, which includes the frontend for the FlyBy app. You won't need to edit the code in this directory.
+The repo also includes a `client` folder, which includes the frontend for the an app. 
 
 To run the client:
 
@@ -106,6 +104,3 @@ To run the servers in the `final` folder:
    }
    ```
 
-## Getting Help
-
-For any issues or problems concerning the course content, please refer to the [Odyssey topic in our community forums](https://community.apollographql.com/tags/c/help/6/odyssey).
