@@ -13,9 +13,9 @@ type Project @key(fields: "id") {
   "The name of the project"
   name: String!
   "A short description about the project"
-  description: String!
-  "The project's main photo as a URL"
-  photo: String!
+  description: String
+  type: String
+  biddingTypeId: Int!
 }
 
 type Mutation {
