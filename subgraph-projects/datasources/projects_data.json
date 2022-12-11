@@ -41,6 +41,20 @@
       "description": "The plant-like organisms on this planet are made up of millions of flowers. Their combined colors and scents make for an amazing spectacle, but they leave little space for other species, which is why there are only very few bush and shrub species. Fungi, grasses and trees are non-existent.",
       "type": "test",
       "biddingTypeId": 2
+    },
+    {
+      "id": "project-7",
+      "name": "Free Ukraine",
+      "description": "",
+      "type": "new",
+      "biddingTypeId": 1
+    },
+    {
+      "id": "project-8",
+      "name": "Project number eight",
+      "description": "test description for project number 8",
+      "type": "new",
+      "biddingTypeId": 2
     }
   ]
 }

@@ -11,7 +11,6 @@ export const GET_LATEST_REVIEWS_AND_LOCATIONS = gql`
       id
       name
       description
-      photo
     }
   }
 `;
@@ -20,15 +19,15 @@ export default function HomePage() {
   const {error, loading, data} = useQuery(GET_LATEST_REVIEWS_AND_LOCATIONS);
 
   if (error) return <Error error={error.message} />;
+
   return (
     <Stack direction="column" spacing="12">
       <VStack direction="column" spacing="2" py="10">
-        <Heading size="2xl">Find yourself in a galaxy far, far away</Heading>
-        <Text fontSize="2xl">
-          Let&apos;s find the right place for you! Check out what other
-          cosmonauts are saying.
-        </Text>
+        <Heading size="2xl">Find yourself in a market ...</Heading>
+
+        <Text fontSize="2xl">Let&apos;s find your project!</Text>
       </VStack>
+
       {/* <Stack direction="column" spacing="4">
         <Heading as="h2" size="lg">
           Latest Reviews
@@ -48,10 +47,12 @@ export default function HomePage() {
               ))}
         </SimpleGrid>
       </Stack> */}
+
       <Stack direction="column" spacing="4">
         <Heading as="h2" size="lg">
           Projects
         </Heading>
+
         {loading ? (
           <Spinner />
         ) : (

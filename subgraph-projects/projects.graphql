@@ -4,6 +4,7 @@ extend schema
 type Query {
   "The full list of projects"
   projects: [Project!]!
+  
   "The details of a specific project"
   project(id: ID!): Project
 }

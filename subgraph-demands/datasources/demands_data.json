@@ -35,6 +35,18 @@
       "name": "item6",
       "projectId": "project-2",
       "volume": 2
+    },
+    {
+      "id": "demand-7",
+      "name": "glass",
+      "projectId": "project-6",
+      "volume": 10
+    },
+    {
+      "id": "demand-8",
+      "name": "table",
+      "projectId": "project-3",
+      "volume": 1
     }
   ]
 }

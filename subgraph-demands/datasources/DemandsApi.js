@@ -1,6 +1,10 @@
 let { demands } = require("./demands_data.json");
 
 class DemandsAPI {
+  getDemands() {
+    return demands;
+  }
+
   getDemand(id) {
     return demands.find((demand) => demand.id === id);
   }
@@ -9,9 +13,7 @@ class DemandsAPI {
     return demands.filter((demand) => demand.projectId === id);
   }
 
-  getDemands() {
-    return demands;
-  }
+
 }
 
 module.exports = DemandsAPI;

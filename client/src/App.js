@@ -10,9 +10,11 @@ export default function App() {
           <Route path="/" exact>
             <HomePage />
           </Route>
+
           <Route path="/location/:id">
             <Location />
           </Route>
+
           <Route>
             <Fallback />
           </Route>
